@@ -3,6 +3,7 @@ import { content } from './data/content.js'
 import { config } from './data/config.js'
 import { projects } from './data/projects.js'
 import Icon from './Icons.jsx'
+import ParticleBg from './ParticleBg.jsx'
 import { useTyped, useScrollEffects } from './hooks.js'
 
 const SECTIONS = ['about', 'experience', 'skills', 'projects', 'education', 'contact']
@@ -72,6 +73,7 @@ export default function App() {
 
       <main id="top">
         <section className="hero" id="about">
+          <ParticleBg />
           <div className="hero-text reveal">
             <p className="eyebrow">{t.about.title}</p>
             <h1>{config.name}</h1>
@@ -102,7 +104,18 @@ export default function App() {
         <section id="skills">
           <h2 className="reveal">{t.skills.title}</h2>
           <div className="cols">
-            {[[t.skills.tech, t.skills.techItems], [t.skills.soft, t.skills.softItems], [t.skills.languages, t.skills.langItems]].map(([h, items]) => (
+            <div className="card reveal">
+              <h3>{t.skills.tech}</h3>
+              <ul className="bars">
+                {t.skills.techItems.map((s) => (
+                  <li key={s.name} style={{ '--w': `${(s.level / 3) * 100}%` }}>
+                    <div className="bar-head"><span>{s.name}</span><small>{t.skills.levels[s.level - 1]}</small></div>
+                    <div className="bar" role="img" aria-label={`${s.name}: ${t.skills.levels[s.level - 1]}`}><i /></div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {[[t.skills.soft, t.skills.softItems], [t.skills.languages, t.skills.langItems]].map(([h, items]) => (
               <div key={h} className="card reveal"><h3>{h}</h3><ul className="chips">{items.map((s) => <li key={s}>{s}</li>)}</ul></div>
             ))}
           </div>

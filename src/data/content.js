@@ -25,7 +25,12 @@ export const content = {
     skills: {
       title: 'Habilidades',
       tech: 'Técnicas',
-      techItems: ['JavaScript', 'React.js', 'GitHub', 'ABAP (SAP EWM)', 'Java (básico)', 'Python (básico)'],
+      // Nível: 1 = básico, 2 = conhecimento, 3 = experiência profissional (ajuste à vontade)
+      techItems: [
+        { name: 'ABAP (SAP EWM)', level: 3 }, { name: 'JavaScript', level: 2 }, { name: 'React.js', level: 2 },
+        { name: 'GitHub', level: 2 }, { name: 'Java', level: 1 }, { name: 'Python', level: 1 },
+      ],
+      levels: ['Básico', 'Conhecimento', 'Profissional'],
       soft: 'Comportamentais',
       softItems: ['Habilidades interpessoais', 'Proatividade', 'Iniciativa para aprender', 'Adaptação a novas tecnologias', 'Comprometimento com qualidade', 'Trabalho em equipe'],
       languages: 'Idiomas',
@@ -78,7 +83,12 @@ export const content = {
     skills: {
       title: 'Skills',
       tech: 'Technical',
-      techItems: ['JavaScript', 'React.js', 'GitHub', 'ABAP (SAP EWM)', 'Java (basic)', 'Python (basic)'],
+      // Level: 1 = basic, 2 = working knowledge, 3 = professional experience (adjust freely)
+      techItems: [
+        { name: 'ABAP (SAP EWM)', level: 3 }, { name: 'JavaScript', level: 2 }, { name: 'React.js', level: 2 },
+        { name: 'GitHub', level: 2 }, { name: 'Java', level: 1 }, { name: 'Python', level: 1 },
+      ],
+      levels: ['Basic', 'Knowledge', 'Professional'],
       soft: 'Soft skills',
       softItems: ['Interpersonal skills', 'Proactivity', 'Initiative to learn', 'Adaptability to new technologies', 'Commitment to quality', 'Teamwork'],
       languages: 'Languages',
