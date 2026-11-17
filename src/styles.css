@@ -61,3 +61,41 @@ footer { padding: 48px 16px 32px; color: var(--muted); text-align: center; font-
 .links { gap: 12px; margin-top: 0; }
 .icon { flex: none; }
 .card .links { word-break: break-all; }
+
+/* Animações */
+.caret { display: inline-block; width: 2px; height: 1.1em; margin-left: 3px; vertical-align: text-bottom; background: var(--accent); animation: blink 1s steps(1) infinite; }
+.role { min-height: 1.6em; }
+@keyframes blink { 50% { opacity: 0; } }
+
+.js-anim .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+.js-anim .reveal.in { opacity: 1; transform: none; }
+.js-anim .cols .reveal:nth-child(2) { transition-delay: .1s; }
+.js-anim .cols .reveal:nth-child(3) { transition-delay: .2s; }
+.js-anim .avatar.reveal { transform: scale(.85); transition-delay: .15s; }
+
+.card { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+.js-anim .card.reveal.in { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, opacity .6s ease; }
+.card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 10px 24px -12px color-mix(in srgb, var(--accent) 55%, transparent); }
+.btn { transition: transform .2s ease, box-shadow .2s ease; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px -6px var(--accent); }
+.chips li { transition: background .2s ease, color .2s ease, border-color .2s ease; }
+.chips li:hover { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+.links a .icon { transition: transform .2s ease; }
+.links a:hover .icon { transform: scale(1.2) rotate(-6deg); }
+
+/* Linha do tempo que se desenha ao rolar */
+.timeline { position: relative; border-left: 0; --p: 1; }
+.timeline::before, .timeline::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; }
+.timeline::before { background: var(--border); }
+.timeline::after { background: var(--accent); transform-origin: top; transform: scaleY(var(--p)); }
+.timeline > li::before { z-index: 1; transition: transform .4s ease; }
+.timeline > li:hover::before { transform: scale(1.5); }
+.timeline > li { margin-left: 0; }
+.timeline { padding-left: 20px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+  .card:hover, .btn:hover { transform: none; }
+}
+.js-anim .card.reveal.in:hover { transform: translateY(-4px); }

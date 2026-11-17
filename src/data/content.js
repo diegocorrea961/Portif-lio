@@ -2,6 +2,7 @@ export const content = {
   pt: {
     nav: { about: 'Sobre', experience: 'Experiência', skills: 'Habilidades', projects: 'Projetos', education: 'Formação', contact: 'Contato' },
     role: 'Estudante de Engenharia de Software · Full-stack · SAP EWM (ABAP)',
+    typed: ['Estudante de Engenharia de Software', 'Desenvolvimento Full-stack', 'React e JavaScript', 'SAP EWM (ABAP)'],
     about: {
       title: 'Sobre mim',
       text: 'Tenho 21 anos e estou à procura de uma oportunidade na área de programação. Estudante de Engenharia de Software com experiência prática em desenvolvimento full-stack e SAP EWM (ABAP), atuando em ambientes profissionais reais. Me destaco pela dedicação e determinação, colaborando de forma comprometida para entregar resultados.',
@@ -54,6 +55,7 @@ export const content = {
   en: {
     nav: { about: 'About', experience: 'Experience', skills: 'Skills', projects: 'Projects', education: 'Education', contact: 'Contact' },
     role: 'Software Engineering student · Full-stack · SAP EWM (ABAP)',
+    typed: ['Software Engineering student', 'Full-stack development', 'React and JavaScript', 'SAP EWM (ABAP)'],
     about: {
       title: 'About me',
       text: "I'm 21 and looking for an opportunity in programming. I'm a Software Engineering student with hands-on experience in full-stack development and SAP EWM (ABAP), working in real professional environments. I stand out for my dedication and determination, collaborating with commitment to deliver results.",
