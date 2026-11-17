@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { content } from './data/content.js'
 import { config } from './data/config.js'
 import { projects } from './data/projects.js'
+import Icon from './Icons.jsx'
 
 const SECTIONS = ['about', 'experience', 'skills', 'projects', 'education', 'contact']
 
@@ -51,7 +52,7 @@ export default function App() {
   }, [lang])
 
   const socials = [
-    ['GitHub', config.github], ['LinkedIn', config.linkedin], ['Instagram', config.instagram],
+    ['GitHub', config.github, 'github'], ['LinkedIn', config.linkedin, 'linkedin'], ['Instagram', config.instagram, 'instagram'],
   ].filter(([, url]) => url)
 
   return (
@@ -144,9 +145,9 @@ export default function App() {
           <div className="contact-grid">
             <ContactForm t={t.contact} />
             <div className="card">
-              <p><a href={`mailto:${config.email}`}>{config.email}</a></p>
               <ul className="links">
-                {socials.map(([n, u]) => <li key={n}><a href={u} target="_blank" rel="noopener noreferrer">{n}</a></li>)}
+                <li><a href={`mailto:${config.email}`}><Icon name="mail" />{config.email}</a></li>
+                {socials.map(([n, u, i]) => <li key={n}><a href={u} target="_blank" rel="noopener noreferrer"><Icon name={i} />{n}</a></li>)}
               </ul>
             </div>
           </div>
